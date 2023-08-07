@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Crie seu evento</title>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <h1>Crie e compartilhe seu evento</h1>
+      <p>
+        O primeiro passo, é preencher esse formulário de inscrição.
+      </p>
+    </header>
+    <form id="my-form">
+      <fieldset>
+        <div class="fieldset-wrapper">
+          <legend>Informações do evento</legend>
+
+          <div class="input-wrapper">
+            <label for="event-title">Título do evento <span>(mínimo 8 caracteres)</span></label>
+            <input type="text" id="event-link" required placeholder="Digite o nome do evento" minlength="8">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="event-link">Link do Evento <span>(comece com http:// )</span></label>
+            <input type="text" id="event-title" required placeholder="Digite o link do evento">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="event-whatsApp">WhatsApp para contato <span>(somente números)</span></label>
+            <input type="number" id="event-whatsApp" required placeholder="(xx) x.xxxx-xxxx">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="event-info">Infomraçõe sextras</label>
+            <textarea id="event-info" cols="30" rows="10"></textarea>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="event-category">WhatsApp para contato <span>(somente números)</span></label>
+            <select type="number" id="event-category" placeholder="Tipo do evento">
+              <option value="">Shows</option>
+              <option value="">Poadcast</option>
+              <option value="">Hackaton</option>
+            </select>
+          </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="fieldset-wrapper">
+
+          <legend>Privacidade</legend>
+          <div class="input-wrapper">
+            <label for="event-email">E-mail do administrador <span>(digite um e-mail)</span></label>
+            <input type="email" id="event-email" required placeholder="exemplo@exemplo.com">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="event-password">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
+            <input type="password" id="event-password" required minlength="8">
+          </div>
+
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="event-private">
+            <label for="event-private">Evento privado</label>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="fieldset-wrapper">
+          <legend>Dia e Hora</legend>
+          <div class="fieldset-wrapper-horas">
+            <div class="input-wrapper">
+              <label for="event-date">Data</label>
+              <input type="date" id="event-date">
+            </div>
+            <div class="input-wrapper">
+              <label for="event-begin">Das</label>
+              <input type="time" id="event-begin">
+            </div>
+            <div class="input-wrapper">
+              <label for="event-end">Até</label>
+              <input type="time" id="event-end">
+            </div>
+          </div>
+      </fieldset>
+    </form>
+    <footer>
+      <div class="submit-button">
+        <input type="submit" id="button" form="my-form" value="Salvar Evento"/>
+      </div>
+    </footer>
+</body>
+
+</html>

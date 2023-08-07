@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, button, select, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #e5e5e5;
+}
+
+body::before {
+  /*conteúdo antes do body*/
+  content: '';
+
+  /*Dimensões do conteúdo que vem antes do body*/
+  width: 100%;
+  height: 368px;
+
+  /*POsicionamento do contúdo que vem antesdo body*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  /*Estamos usando o position absolute para que ele fique por cima de todos os outros elementos, assim podemos escolher a partir de qual ponto ele será absoluto, aqui colocamos o top:0 e o left: 0*. Usando o position absolute, liberamos também uma nova habilidade que é o Z-index, ele tem a função de escolher a ordem de prioridade dos elementos dispostos na tela, ex: quando maior o valor do z-index, maior a prioridade dele, então de tivermos um elemento com valor 1  e o outro com valor -1, o elemento com valor 1 vai aparecer por cima do valor -1 assim como fizemos nesse bloco. */
+  position: absolute;
+
+  /*Cor do conteúdo que vem antes do body*/
+  background: #121214;
+}
+
+.page {
+  width: 736px;
+  margin: 0 auto;
+}
+
+header {
+  width: 319px;
+  margin-top: 74px;
+}
+
+/*Editando a estilização do titulo*/
+header h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+
+  color: white;
+}
+
+header p {
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 28px;
+
+  color: #42d3ff;
+}
+
+form {
+  margin-top: 36px;
+  min-height: 300px;
+  padding: 64px;
+
+  border-radius: 8px 8px 0 0;
+
+  background: #fafafc;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+fieldset legend {
+  font-family: 'Archivo' sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+
+  width: 100%;
+
+  border-bottom: 1px solid #e6e6f0;
+  padding-bottom: 16px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper label,
+.checkbox-wrapper label {
+  font-size: 14px;
+  line-height: 24px;
+  
+  color: #4e4958;
+  margin-bottom: 8px;
+}
+
+/*Estamos usando esse posicionamento para melhorar a assecibilidade do site, porque como colcamos o checkbox como display: none, precisamos fazer com que aparece o outline, porque o background image não é reconhecido pelo navegador como um elementp*/
+.checkbox-wrapper{
+  position: relative;  
+}
+
+/* Aqui nós colocamos o position dele para ser absoluto ao do checkbox-wrapper, assim ele ficou posiiconado dentro do background-image, assim nós aumentamos também o tamnho dele para fica do tamanho do backgrund-image. E também tirei a opacidade do botão para que ele seja um elemento reconhecido pelo navegador mas que não seja visivel ao usuário*/
+.checkbox-wrapper input{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 24px;
+  height: 24px;
+
+  opacity: 0;
+}
+
+/*Aqui nós inserimos uma sudo class no checkbox quando ele estiver em foco*selecionado. Como nós tiramos a opacidade da caixa do checkbox ela não iria aparecer quando ela estava selecionada*/
+.checkbox-wrapper input:focus + label::before{
+  outline: 2px solid black;
+}
+
+.checkbox-wrapper label{
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+  margin: 0;
+}
+
+
+
+.checkbox-wrapper label::before{
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+  display: block;
+}
+
+.checkbox-wrapper input:checked + label::before{
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00016 11.1698L1.83016 6.99984L0.410156 8.40984L6.00016 13.9998L18.0002 1.99984L16.5902 0.589844L6.00016 11.1698Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-wrapper label span {
+  margin-left: 12px; 
+  font-size: 12px;
+  line-height: 20px;
+  
+  color: #c1bccc;
+}
+
+.input-wrapper label span:hover{
+  color: #5e5e5f;
+}
+
+.input-wrapper input{
+  font-size: 16px;
+  background-color: #FAFAFC;
+  color: #C1BCCC;
+  
+  height: 56px;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  padding-left: 24px;
+}
+
+.input-wrapper textarea{
+  background-color: #FAFAFC;
+  color: #C1BCCC;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+.input-wrapper select {
+  font-size: 16px;
+  color: #C1BCCC;
+
+  border-radius: 8px;
+
+  height: 56px;
+  padding-left: 24px ;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-color: #FAFAFC;
+ 
+
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_65_657)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_65_657'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+}
+
+#event-email, #event-password{
+  font-size: 14px;
+}
+
+
+
+.fieldset-wrapper-horas{
+  display: flex;
+  gap: 20px;
+}
+
+.fieldset-wrapper-horas > div:nth-child(1){
+  width: 100%;
+}
+
+.fieldset-wrapper-horas div input {
+  padding-right: 8px;
+}
+
+.submit-button{
+
+  padding: 40px 64px;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+}
+
+#button{
+  display: block;
+
+  width: 600px;
+  padding: 15px 40px;
+
+  background: #04D361;
+
+  border-radius: 8px;
+  border: none;
+
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 26px;
+}
+
+footer{
+  margin-bottom: 100px;
+  
+  background: #F0F0F4;
+
+  height: 136px;
+
+  border-top: 1px solid #d6d6d6;
+}
+
+#button:hover{
+  background: #04873f;
+}
+
+input:invalid{
+  border: 2px solid red;
+}
